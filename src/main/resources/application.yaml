@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: planeapp
+
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: USER
+
+  liquibase:
+    change-log: classpath:db/changelog/changelog-master.xml
+
