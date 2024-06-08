@@ -7,4 +7,9 @@
 
     <include file="/db/changelog/1.0/create-groups-table.xml"/>
     <include file="/db/changelog/1.0/create-students-table.xml"/>
+    <include file="/db/changelog/1.0/fill-groups-table.xml"/>
+    <include file="/db/changelog/1.0/fill-students-table.xml"/>
+
+
+
 </databaseChangeLog>

@@ -9,34 +9,30 @@ import java.util.List;
 
 @Entity
 @Table(name="univercity_groups")
-public class UniversityGroup {
-    @Setter
+@Getter
+@Setter
+public class UnivercityGroup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private int id;
 
-    @Setter
-    @Getter
     @Column(name="group_number")
     private String groupNumber;
 
-    @Setter
-    @Getter
     @OneToMany(cascade = {CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH, CascadeType.PERSIST},
-            fetch = FetchType.LAZY )
-    @JoinColumn(name = "univercity_groups_id")
-    private List<Student> students;
+            fetch = FetchType.LAZY, mappedBy = "univercityGroup")
+    private List<UnivercityStudent> students;
 
-    public UniversityGroup() {
+    public UnivercityGroup() {
     }
 
-    public void addStudentsToUniversityGroup(Student student) {
-        if(students==null){
-            students = new ArrayList<>();
-        }
-        students.add(student);
+    public UnivercityGroup(int id, String groupNumber, List<UnivercityStudent> students) {
+        this.id = id;
+        this.groupNumber = groupNumber;
+        this.students = students;
     }
+
     @Override
     public String toString() {
         return "UniversityGroup{" +

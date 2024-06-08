@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="fill-table-students" author="Evgenii Tsarin">
+        <insert tableName="students">
+            <column name="id" valueNumeric="1"/>
+            <column name="surname" value="Ivanov"/>
+            <column name="univercity_groups_id" value="2"/>
+
+        </insert>
+        <insert tableName="students">
+            <column name="id" valueNumeric="2"/>
+            <column name="surname" value="Zalupa"/>
+            <column name="univercity_groups_id" value="1"/>
+
+        </insert>
+        <insert tableName="students">
+            <column name="id" valueNumeric="3"/>
+            <column name="surname" value="Petrov"/>
+            <column name="univercity_groups_id" value="2"/>
+
+        </insert>
+        <insert tableName="students">
+            <column name="id" valueNumeric="4"/>
+            <column name="surname" value="Durov"/>
+            <column name="univercity_groups_id" value="1"/>
+
+        </insert>
+        <insert tableName="students">
+            <column name="id" valueNumeric="5"/>
+            <column name="surname" value="Kozlov"/>
+            <column name="univercity_groups_id" value="2"/>
+
+        </insert>
+    </changeSet>
+</databaseChangeLog>
