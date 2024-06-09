@@ -16,3 +16,6 @@ spring:
     hibernate:
       ddl-auto: validate
 
+student:
+  prod:
+    mode: true

@@ -15,9 +15,9 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 //@Qualifier
-@Profile("group_prod")
-//@ConditionalOnProperty(value = "prod.mode", havingValue = "true")
-public class UnivercityGroupProdService implements GroupService {
+@Profile("group_test")
+//@ConditionalOnProperty(value = "test.mode", havingValue = "false")
+public class UnivercityGroupTestService implements GroupService {
 
     private final UniversityGroupRepository univercityGroupRepository;
 

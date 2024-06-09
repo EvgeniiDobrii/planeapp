@@ -12,9 +12,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-//@Profile("student_prod")
-@ConditionalOnProperty(value = "student.prod.mode", havingValue = "true")
-public class UnivercityStudentProdService implements StudentService{
+@Profile("student_test")
+@ConditionalOnProperty(value = "student.test.mode", havingValue = "false")
+public class UnivercityStudentTestService implements StudentService{
 
     private final UnivercityStudentRepository univercityStudentRepository;
     private final UniversityGroupRepository universityGroupRepository;
@@ -22,11 +22,11 @@ public class UnivercityStudentProdService implements StudentService{
 
     @Override
     public void addUnivercityStudentByGroupNumber(UnivercityStudentDto univercityStudentDto, String groupNumber) {
-      UnivercityGroup univercityGroup = universityGroupRepository.findUnivercityGroupByGroupNumber(groupNumber);
-      UnivercityStudent univercityStudent = new UnivercityStudent();
-      univercityStudent.setId(univercityStudentDto.getId());
-      univercityStudent.setSurname(univercityStudentDto.getSurname());
-      univercityStudent.setUnivercityGroup(univercityGroup);
-      univercityStudentRepository.save(univercityStudent);
+        UnivercityGroup univercityGroup = universityGroupRepository.findUnivercityGroupByGroupNumber(groupNumber);
+        UnivercityStudent univercityStudent = new UnivercityStudent();
+        univercityStudent.setId(univercityStudentDto.getId());
+        univercityStudent.setSurname(univercityStudentDto.getSurname());
+        univercityStudent.setUnivercityGroup(univercityGroup);
+        univercityStudentRepository.save(univercityStudent);
     }
 }
